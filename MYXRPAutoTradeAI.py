@@ -68,6 +68,7 @@ def get_ror(k, ticker):
     ror = df['ror'].cumprod()[-2]
     return ror
 
+bestk = 0.5
 def find_bestk(ticker):
     global bestk
     k_ls = []
@@ -76,7 +77,9 @@ def find_bestk(ticker):
         k_ls.append([k,ror])
 
     bestk = max(k_ls, key=lambda x: x[1])[0]
-schedule.every().day.at("9:00").do(find_bestk("KRW-XRP"))
+
+find_bestk("KRW-ADA")
+schedule.every().day.hour.do(lambda: find_bestk("KRW-ADA"))
 
 # 로그인
 upbit = pyupbit.Upbit(access, secret)
