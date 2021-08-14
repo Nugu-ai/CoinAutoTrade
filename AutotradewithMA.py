@@ -6,7 +6,7 @@ import schedule
 
 access = "hnijp8VO0cC5Wx09dD2tgyJIeaWfcpqbFxYGj3z8"
 secret = "rNP8SbOZwdHVRQIY60WaWIDDnosFSvIGWqSdeUwu"
-tick = "KRW-ADA"
+tick = "KRW-"
 
 def get_target_price(ticker, k):
     """변동성 돌파 전략으로 매수 목표가 조회"""
@@ -86,7 +86,7 @@ while True:
                 if krw > 5000:
                     upbit.buy_market_order(tick, krw*0.9995)
         else:
-            btc = get_balance(tick.split("-"[1]))
+            btc = get_balance(tick.split("-")[1])
             if btc > 5000 / current_price:
                 upbit.sell_market_order(tick, btc*0.9995)
         time.sleep(1)
