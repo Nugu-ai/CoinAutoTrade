@@ -6,7 +6,7 @@ import schedule
 
 access = "hnijp8VO0cC5Wx09dD2tgyJIeaWfcpqbFxYGj3z8"
 secret = "rNP8SbOZwdHVRQIY60WaWIDDnosFSvIGWqSdeUwu"
-tick = "KRW-"
+tick = "KRW-XRP"
 
 def get_target_price(ticker, k):
     """변동성 돌파 전략으로 매수 목표가 조회"""
